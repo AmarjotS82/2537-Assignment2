@@ -1,0 +1,20 @@
+<%- include("templates/header") %> 
+    <% if(session == "valid"){ %>
+        <h2>Hello, <%= username %> </h2>
+        <form class="mb-3" action ='/members' method ='get'> 
+            <button class="btn btn-warning rounded-pill px-3" type="submit">Members Area</button>
+        </form>
+        
+        <form action ='/logout' method ='get'>
+            <button class="btn btn-secondary rounded-pill px-3" type="submit">Log Out</button>
+        </form>
+    <% }  else if(session == "invalid"){ %>
+         <form class="mb-3" action ='/signup' method ='get'> 
+            <button class="btn btn-warning rounded-pill px-3" type="submit">Sign Up</button>
+        </form>
+        
+        <form action ='/login' method ='get'>
+            <button class="btn btn-info rounded-pill px-3" type="submit">Log In</button>
+        </form>
+    <% } %>
+<%- include("templates/footer") %> 

@@ -1,0 +1,14 @@
+<%- include("templates/header") %> 
+    <div class="px-2 py-3">
+        <% if (missingInfo == 'name') { %>
+                <h3>name is required</h3>
+        <% } else if(missingInfo == 'email'){ %>
+                <h3>email is required</h3>
+        <% }else if(missingInfo == 'password'){ %>
+                <h3>password is required</h3>
+        <% } else if(userStatus == "duplicate"){ %>
+                <h3>The username already exists, please try a different username!</h3>
+        <% } %>
+        <a class="btn btn-info " href='/signup'>Try again</a> 
+   </div>
+<%- include("templates/footer") %> 

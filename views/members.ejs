@@ -1,0 +1,12 @@
+<%- include("templates/header") %> 
+    <h2>Hello, <%= username %> </h2>
+    <div class="row mb-3 text-center">
+        <div class="col-md-4 themed-grid-col"><img class="img-fluid" src="bulbasaur.jpg" alt="bulbasaur" /> </div>
+        <div class="col-md-4 themed-grid-col"><img class="img-fluid" src="charmander.jpg" alt="charmander" /></div>
+        <div class="col-md-4 themed-grid-col"><img class="img-fluid" src="squirtle.png" alt="squirtle" /></div>
+    </div>
+    <a class=" my-3 btn btn-warning" href="/logout">Log Out</a>
+    <form action ='/admin' method ='get'>
+        <button class="btn btn-primary">Admin</button>
+    </form>
+<%- include("templates/footer") %> 

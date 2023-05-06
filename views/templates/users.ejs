@@ -1,0 +1,24 @@
+<li> 
+
+    <div class=" row mb-3 text-center">
+        <div class="col-md-3 themed-grid-col p-2">
+            <%= user.username%> 
+        </div>
+
+        <div class="col-md-3 themed-grid-col p-2">
+            <%= user.user_type%> 
+        </div>
+
+        <div class="col-md-3 themed-grid-col">
+            <form action='/adminStatus?status=premote&user=<%= user.username%>' method='post'>
+                <button class="btn btn-success mb-1">Premote</button>
+            </form>
+        </div>
+
+        <div class="col-md-3 themed-grid-col">
+            <form action='/adminStatus?status=demote&user=<%= user.username%>' method='post'>
+                <button class="btn btn-danger">Demote</button>
+            </form>
+        </div>
+    </div>
+</li>

@@ -1,0 +1,17 @@
+<%- include("templates/header") %> 
+        <% if (!username) {  %>
+                <h3>no user provided - try /nosql-injection?user=name</h3> <h3>or /nosql-injection?user[$ne]=name</h3>
+                
+        <% } %>
+
+        <%if (validation != null) {  %>
+                <h1 style='color:darkred;'>A NoSQL injection attack was detected!!</h1>
+                
+        <% } %>	
+
+        <h2>Hello, <%= username %> </h2>
+        <br></br> 
+        <button>Go to member's Area</button>
+        <br></br> 
+        <button>Log Out</button>
+<%- include("templates/footer") %> 
