@@ -66,10 +66,19 @@ function validSession(req){
 
 function sessionValidation(req,res,next){
     console.log("vs: " + validSession(req));
+    console.log("path: " + url.parse(req.url).pathname);
+    
     if(validSession(req)){
         next();
     }else{
-        res.redirect('/');
+        console.log("inside: " + url.parse(req.url).pathname);
+       
+        if(url.parse(req.url).pathname == "/admin"){
+            res.redirect('/login');
+        } else if(url.parse(req.url).pathname == "/"){
+            res.redirect('/');
+        }
+        
     }
     
 }
@@ -240,6 +249,7 @@ app.post('/loggingIn', async (req,res) => {
 		return;
 	}
 });
+
 
 app.use("/members",sessionValidation)
 app.get('/members',(req,res) => {
